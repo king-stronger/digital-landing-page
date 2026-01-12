@@ -79,7 +79,7 @@
     html {
         font-size: 16px;
         scroll-behavior: smooth;
-        font-family: inter, sans-serif;
+        font-family: "Sora", inter, sans-serif;
     }
     
     body {
@@ -132,6 +132,15 @@
         color: var(--text);
         background-color: var(--bg);
     }
+    
+    img {
+        border-radius: .5rem;
+
+        @supports(corner-shape: squircle){
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
 
     /****************************************** HEADER **************************/
     .header-hero {
@@ -144,22 +153,14 @@
             background: var(--container);
         }
     }
+
+    .nav-link:hover {
+        color: var(--clr-accent);
+    }
     /****************************************** HEADER **************************/
 
     /****************************************** HERO SECTION **************************/
-    .hero-section {
-        min-height: 65dvh;
-        display: grid;
-
-        .wrapper {
-            place-items: center;
-            place-content: center;
-        }
-        
-        .hero-content {
-            place-items: center;
-        }
-    }
+    
     /****************************************** HERO SECTION **************************/
 
     /****************************************** SERVICES SECTION **************************/
@@ -176,13 +177,7 @@
 
     /****************************************** WHY SECTION **************************/
     .why-section {
-        border-radius: .5rem;
         background-color: var(--container-alt);
-
-        @supports(corner-shape: squircle){
-            border-radius: 3rem;
-            corner-shape: squircle;
-        }
     }
     /****************************************** WHY SECTION **********************
 
@@ -208,6 +203,15 @@
             border-radius: 3rem;
             corner-shape: squircle;
         }
+
+        input {
+            background-color: var(--clr-white);
+
+            @supports(corner-shape: squircle){
+                border-radius: 3rem;
+                corner-shape: squircle;
+            }
+        }
     }
     /****************************************** CTA SECTION **************************/
 
@@ -220,6 +224,16 @@
         @supports(corner-shape: squircle){
             border-radius: 3rem;
             corner-shape: squircle;
+        }
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            
+            @supports(corner-shape: round){
+                corner-shape: round;
+            }
         }
     }
     /****************************************** TESTIMONIALS SECTION **************************/
@@ -314,6 +328,20 @@
     /****************************************** SECTIONS **************************/
 
     /****************************************** HERO SECTION **************************/
+    .hero-section {
+        min-height: 70dvh;
+        display: grid;
+
+        .wrapper {
+            place-items: center;
+            place-content: center;
+        }
+        
+        .hero-content {
+            place-items: center;
+        }
+    }
+
     .hero-section .wrapper {
         display: grid;
         gap: var(--gap-4);
@@ -334,6 +362,7 @@
         display: grid;
         gap: var(--gap-4);
         align-items: center;
+        margin-top: var(--gap-5);
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     }
     /****************************************** ABOUT SECTION **************************/
@@ -349,7 +378,7 @@
         display: flex;
         gap: var(--gap-0);
         flex-direction: column;
-        padding: var(--padding-3) var(--padding-2);
+        padding: var(--padding-3) var(--padding-3);
     }
     /****************************************** SERVICES SECTION **************************/
 
@@ -389,8 +418,9 @@
 
     .testimonial {
         display: flex;
-        gap: var(--gap-3);
+        gap: var(--gap-2);
         flex-direction: column;
+        justify-content: space-between;
         padding: var(--padding-3) var(--padding-3);
 
         p {
@@ -400,6 +430,10 @@
         span {
             align-self: end;
             text-align: end;
+        }
+
+        img {
+            width: 50px;
         }
     }
     /****************************************** TESTIMONIALS SECTION **************************/
@@ -447,9 +481,13 @@
         align-items: center;
         flex-direction: column;
 
-        div {
+        form {
             display: flex;
             gap: var(--gap-2);
+        }
+
+        input {
+            padding: var(--padding-1);
         }
     }
     /****************************************** CTA SECTION **************************/
@@ -463,22 +501,18 @@
         display: grid;
         gap: var(--gap-4);
         padding-block: var(--padding-5);
-        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     }
 
-    .footer-link-list {
+    footer .about {
         display: flex;
-        gap: var(--gap-0);
+        gap: var(--gap-1);
         flex-direction: column;
-
-        a {
-            color: var(--text-muted);
-            font-size: calc((var(--fs-100) + var(--fs-200)) / 2);
-        }
     }
 
-    footer .mention {
-        grid-column: 1 / -1;
+    .social-links {
+        display: flex;
+        gap: var(--gap-1);
+        align-items: center;
     }
     /****************************************** FOOTER **************************/
 }
@@ -582,6 +616,7 @@
 
     /*********************** BUTTONS**************************/
     .btn, .btn-sm, .btn-lg {
+        text-align: center;
         border-radius: .5rem;
         display: inline-block;
     }
