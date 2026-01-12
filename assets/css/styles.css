@@ -483,7 +483,10 @@
 
         form {
             display: flex;
+            flex-wrap: wrap;
             gap: var(--gap-2);
+            align-items: center;
+            justify-content: center;
         }
 
         input {
