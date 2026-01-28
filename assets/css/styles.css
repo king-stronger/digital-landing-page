@@ -143,8 +143,19 @@
     }
 
     /****************************************** HEADER **************************/
-    .header-hero {
-        background: linear-gradient(180deg, oklch(0.9352 0.0124 286.16), oklch(0.795 0.0669 300));
+    header {
+        background: oklch(0.9352 0.0124 286.16);
+    }
+
+    header .wrapper {
+        border-radius: 3rem;
+        box-shadow: var(--shadow-medium);
+        background-color: var(--clr-white);
+        border: 1px solid var(--clr-border);
+
+        @supports(corner-shape: round){
+            corner-shape: round;
+        }
     }
 
     @media (width < 750px) {
@@ -160,7 +171,9 @@
     /****************************************** HEADER **************************/
 
     /****************************************** HERO SECTION **************************/
-    
+    .hero-section {
+        background: linear-gradient(180deg, oklch(0.9352 0.0124 286.16), oklch(0.795 0.0669 300));
+    }
     /****************************************** HERO SECTION **************************/
 
     /****************************************** SERVICES SECTION **************************/
@@ -184,7 +197,9 @@
     /****************************************** PROCESS SECTION **************************/
     .process {
         border-radius: .5rem;
-        background: linear-gradient(180deg, oklch(0.9352 0.0124 286.16), oklch(0.795 0.0669 300));
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-white);
+        border: 1px solid var(--clr-border);
         
 
         @supports(corner-shape: squircle){
@@ -218,7 +233,9 @@
     /****************************************** TESTIMONIALS SECTION **************************/
     .testimonial {
         border-radius: .5rem;
-        background-color: var(--container-alt);
+        box-shadow: var(--shadow-light);
+        background-color: var(--clr-white);
+        border: 1px solid var(--clr-border);
         
 
         @supports(corner-shape: squircle){
@@ -273,11 +290,18 @@
 
 @layer layout {
     /****************************************** HEADER **************************/
+    header {
+        padding-block: var(--padding-4);
+    }
     header .wrapper {
+        z-index: 10;
+        position: fixed;
+        inset: .5rem 0 auto 0;
+
         display: flex;
         align-items: center;
-        padding-block: var(--padding-3);
         justify-content: space-between;
+        padding-block: var(--padding-1);
     }
 
     .menu {
@@ -300,8 +324,8 @@
 
         .menu {
             z-index: 10;
+            position: fixed;
             inset: 0 0 auto 0;
-            position: absolute;
             translate: 0 -120%;
 
             padding-block: var(--padding-7);
@@ -335,10 +359,6 @@
         .wrapper {
             place-items: center;
             place-content: center;
-        }
-        
-        .hero-content {
-            place-items: center;
         }
     }
 
