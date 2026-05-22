@@ -6,7 +6,7 @@
 
 @layer components {
     .wrapper {
-        @apply mx-auto w-full max-w-270 px-8 py-20;
+        @apply mx-auto w-full max-w-270 px-6 py-12 md:px-8 md:py-20;
     }
 
     .nav {
@@ -19,9 +19,9 @@
         }
 
         @container (width < 700px){
-            @apply absolute inset-0 flex flex-col gap-4 p-4 bg-white;
+            @apply absolute flex flex-col gap-4 p-4 bg-white border-y border-gray-400
+                shadow-md shadow-gray-400;
         }
-
     }
 
     .navbar-actions {
@@ -82,5 +82,5 @@
 }
 
 @layer utilities {
-    
+
 }
