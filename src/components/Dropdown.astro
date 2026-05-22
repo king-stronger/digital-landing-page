@@ -1,0 +1,40 @@
+---
+import { ChevronDown } from "@lucide/astro"
+
+const { name } = Astro.props
+---
+
+<div class="dropdown">
+    <button class="group px-2 py-1 flex items-center gap-2 rounded hover:bg-gray-200">
+        <span>{ name }</span>
+        <ChevronDown size={16} class="transition-transform duration-200 group-hover:rotate-180"/>
+    </button>
+    <ul class="dropdown-menu border border-gray-300 rounded shadow-xs">
+        <slot></slot>
+    </ul>
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        inset: calc(100% + .5rem) auto auto 0;
+        
+        margin: 0;
+        padding: 1.5rem;
+        
+        display: none;
+        
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        
+        translate: -50% 0;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: grid;
+    }
+</style>

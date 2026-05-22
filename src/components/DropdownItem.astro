@@ -1,0 +1,11 @@
+---
+const { title, description } = Astro.props
+---
+
+<li class="w-max flex items-center gap-4">
+    <slot></slot>
+    <div>
+        <span class="font-semibold">{ title }</span>
+        <p class="text-sm">{ description }</p>
+    </div>
+</li>

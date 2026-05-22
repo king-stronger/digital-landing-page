@@ -1,5 +1,8 @@
 {
-  "github.copilot.chat.commitMessageGeneration.instructions": [
+    "css.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore",
+    "less.lint.unknownAtRules": "ignore",
+    "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Use Conventional Commits with emojis."
     },

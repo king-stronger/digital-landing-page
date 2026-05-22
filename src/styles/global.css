@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@layer base {
+    
+}
+
+@layer components {
+    .wrapper {
+        @apply mx-auto w-full max-w-270 px-8 py-12
+    }
+
+    .btn-primary {
+        @apply px-2.5 py-1.5 bg-black text-white rounded
+    }
+}
+
+@layer utilities {
+}

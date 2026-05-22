@@ -1,5 +1,82 @@
 ---
+import { Star } from "@lucide/astro"
+import Dropdown from "./Dropdown.astro"
+import DropdownItem from "./DropdownItem.astro"
 import BannerSection from '../sections/BannerSection.astro';
 ---
 
 <BannerSection />
+
+<header>
+    <div class="wrapper flex items-center justify-between gap-8 py-4">
+        <h1>Logo</h1>
+    
+        <nav class="flex items-center justify-between gap-4">
+            <Dropdown name="Platform">
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+            </Dropdown>
+            <Dropdown name="Ressources">
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+            </Dropdown>
+            <Dropdown name="Contact">
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+                <DropdownItem
+                    title="Lorem"
+                    description="Lorem ipsum dolor sit amet"    
+                >
+                    <Star />
+                </DropdownItem>
+            </Dropdown>
+        </nav>
+    
+        <div class="flex items-center justify-between gap-4">
+            <a href="">Sign in</a>
+            <a href="" class="btn-primary">Get Started</a>
+        </div>
+    </div>
+</header>
