@@ -6,13 +6,81 @@
 
 @layer components {
     .wrapper {
-        @apply mx-auto w-full max-w-270 px-8 py-12
+        @apply mx-auto w-full max-w-270 px-8 py-20;
+    }
+
+    .nav {
+        @container (width > 700px){
+            @apply flex items-center gap-4;
+            
+            [class*="btn-"]{
+                display: none;
+            }
+        }
+
+        @container (width < 700px){
+            @apply absolute inset-0 flex flex-col gap-4 p-4 bg-white;
+        }
+
+    }
+
+    .navbar-actions {
+        @container (width > 700px){
+            @apply flex items-center justify-between gap-4;
+            
+            button {
+                display: none;
+            }
+        }
+
+        
+        @container (width < 700px){
+            a {
+                display: none;
+            }
+        }
+    }
+
+    .dropdown {
+        @apply relative
+    }
+    
+    .dropdown-button {
+        @apply px-2 py-1 flex items-center gap-2 rounded hover:bg-gray-200;
+
+        @container (width < 700px){
+            @apply w-full justify-between ;
+        }
+    }
+
+    .dropdown-menu {        
+        @container (width > 700px){
+            @apply hidden w-xl m-0 p-6 absolute left-0 top-[calc(100%+0.5rem)] flex-wrap gap-8 
+                -translate-x-1/2 rounded shadow-xs shadow-black bg-white;
+        }
+
+        @container (width < 700px){
+            @apply hidden w-full m-0 p-2 flex-col flex-wrap gap-4 bg-gray-100 rounded;
+        }
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown-button:active {
+        display: flex;
     }
 
     .btn-primary {
-        @apply px-2.5 py-1.5 bg-black text-white rounded
+        @apply px-2.5 py-2 text-center text-white rounded bg-black;
+    }
+
+    .btn-secondary {
+        @apply px-2.5 py-2 text-center rounded border border-gray-400;
     }
 }
 
 @layer utilities {
+    
 }
