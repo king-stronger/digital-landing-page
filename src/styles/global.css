@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
 @layer base {
-    
+    section {
+        container-type: inline-size;
+        
+        @apply mt-20;
+    }
+
+    p, span {
+        @apply max-w-xl text-gray-600
+    }    
 }
 
 @layer components {
     .wrapper {
         @apply mx-auto w-full max-w-270 px-6 py-12 md:px-8 md:py-20;
     }
-
+    
+    /*********************************** HEADER ******************************************/
     .nav {
         @container (width > 700px){
             @apply flex items-center gap-4;
@@ -71,14 +80,134 @@
     .dropdown-button:active {
         display: flex;
     }
+    /*********************************** HEADER ******************************************/
 
+    /*********************************** FEATURE ******************************************/
+    .feature {
+        @apply px-4 py-8 flex flex-col items-center gap-1 text-center bg-gray-100 rounded-3xl;
+    }
+    /*********************************** FEATURE ******************************************/
+
+    /*********************************** INTEGRATIONS ******************************************/
+    .integration {
+        @apply px-2 py-4 flex gap-4 items-center rounded-3xl border border-gray-300 shadow-sm;
+
+        svg {
+            @apply w-20 fill-red-400;
+        }
+
+        div {
+            @apply flex flex-col gap-1;
+        }
+
+        h3 {
+            @apply text-lg font-semibold;
+        }
+
+        p {
+            @apply text-sm
+        }
+    }
+    /*********************************** INTEGRATIONS ******************************************/
+
+    /*********************************** PROCESS ******************************************/
+    .process {
+        @apply py-8 flex gap-4 items-start border-t border-gray-300;
+
+        span {
+            @apply p-1 bg-gray-100;
+        }
+
+        div {
+            @apply flex flex-col gap-2;
+
+            h3 {
+                @apply text-xl font-semibold
+            }
+
+            p {
+                @apply text-base
+            }
+        }
+    }
+    /*********************************** PROCESS ******************************************/
+
+    /*********************************** PRICING ******************************************/
+    .pricing {
+        @apply flex flex-col gap-8 p-4
+            border border-gray-300 rounded-lg shadow-sm;
+
+        h3 {
+            @apply text-lg font-semibold;
+        }
+
+        h4 {
+            @apply text-4xl font-semibold;
+        }
+
+        p {
+            @apply text-base;
+        }
+
+        .pricing-features {
+            @apply flex flex-col gap-3;
+
+            li {
+                @apply flex gap-2 text-sm;
+            }
+        }
+    }
+    /*********************************** PRICING ******************************************/
+
+
+    /*********************************** TESTIMONIALS ******************************************/
+    .testimonial {
+        @apply px-6 py-4 flex flex-col gap-4 border border-gray-400 rounded-2xl;
+
+        h3 {
+            @apply text-2xl font-semibold;
+
+            span {
+                @apply text-black;
+            }
+        }
+
+        p {
+            @apply text-sm italic;
+        }
+
+        .user {
+            @apply flex items-center gap-2;
+            
+            .user-icon {
+                @apply p-2 w-9 h-9 bg-gray-400 rounded-full
+            }
+
+            div {
+                @apply flex flex-col gap-0;
+
+                h4 {
+                    @apply text-base font-semibold;
+                }
+
+                span {
+                    @apply text-sm;
+                }
+            }
+        }
+    }
+    /*********************************** TESTIMONIALS ******************************************/
+
+
+    /*********************************** BUTTONS ******************************************/
     .btn-primary {
-        @apply px-2.5 py-2 text-center text-white rounded bg-black;
+        @apply px-2.5 py-2 text-center text-white rounded-lg bg-black;
     }
-
+    
     .btn-secondary {
-        @apply px-2.5 py-2 text-center rounded border border-gray-400;
+        @apply px-2.5 py-2 text-center rounded-lg border border-gray-400;
     }
+    /*********************************** BUTTONS ******************************************/
 }
 
 @layer utilities {

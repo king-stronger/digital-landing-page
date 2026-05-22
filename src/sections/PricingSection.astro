@@ -1,0 +1,127 @@
+---
+import { BadgeCheck } from "@lucide/astro";
+---
+
+<section>
+    <div class="wrapper">
+        <h2 class="text-3xl md:text-6xl text-center font-semibold mb-4">Simple Pricing Plans</h2>
+        <div class="p-1 mx-auto w-max rounded-sm bg-gray-200 mb-8">
+            <button class="px-2 py-1 rounded-sm bg-white">Monthly</button>
+            <button class="px-2 py-1 rounded-sm">Yearly</button>
+        </div>
+        <ul class="pricing-list">
+            <li class="pricing">
+                <h3>Basic Plan</h3>
+                <div class="price">
+                    <h4>$0</h4>
+                    <span>Per month</span>
+                </div>
+                <p>
+                    Ideal for individuals getting started. No credit card required.
+                </p>
+                <button class="btn-secondary">Start for Free</button>
+                <hr class="text-gray-300">
+                <ul class="pricing-features">
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="pricing border-2 border-black">
+                <h3>Standard Plan</h3>
+                <div class="price">
+                    <h4>$20</h4>
+                    <span>Per month</span>
+                </div>
+                <p>
+                    Ideal for individuals getting started. No credit card required.
+                </p>
+                <button class="btn-primary">Get Started</button>
+                <hr class="text-gray-300">
+                <ul class="pricing-features">
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="pricing">
+                <h3>Premium Plan</h3>
+                <div class="price">
+                    <h4>$80</h4>
+                    <span>Per month</span>
+                </div>
+                <p>
+                    Ideal for individuals getting started. No credit card required.
+                </p>
+                <button class="btn-secondary">Buy Now</button>
+                <hr class="text-gray-300">
+                <ul class="pricing-features">
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                    <li>
+                        <BadgeCheck />
+                        <span>Up to 5 components</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    .pricing-list {
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    }
+</style>
